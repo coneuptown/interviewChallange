@@ -1,9 +1,9 @@
-//
-//  map.h
-//  cocoInterviewChallange
-//
-//  Copyright © 2017 FangaiuihaCode. All rights reserved.
-//
+//***********************************************************
+//  Sione Fangaiuiha                                        *
+//  map.h                                                   *
+//  cocoInterviewChallange                                  *
+//  Copyright © 2017 FangaiuihaCode. All rights reserved.   *
+//***********************************************************
 
 #ifndef map_h
 #define map_h
@@ -12,11 +12,12 @@
 #include <fstream>
 #include <iomanip>
 
-
 using namespace std;
 
+//struct for node
 struct node
 {
+    //constructors
     node()
     {
         companyName = "";
@@ -32,7 +33,7 @@ struct node
         this->materialCost = materialCost;
     }
     
-    
+    //variables
     string companyName;
     int materialAmount;
     double materialCost;
@@ -40,9 +41,13 @@ struct node
     node *prev;
 };
 
+
+//map
 class map
 {
+    
 public:
+    //contructor
     map()
     {
         head = NULL;
@@ -52,13 +57,16 @@ public:
         count = 0;
     }
     
+    //destructor
     ~ map()
     {
         
     }
     
+    //methods
     void findBestCustomer(map *);
     
+    //variables
     node *head;
     node *tail;
     node *current;
@@ -67,6 +75,7 @@ public:
     
 };
 
+//find best customer function
 void map::findBestCustomer(map *mp)
 {
     int materialCount;
@@ -81,6 +90,7 @@ void map::findBestCustomer(map *mp)
     bestCust = materialCost/materialCount;
     n = mp->head;
     
+    //for loop to go through nodes comparing companies
     for(int i = 0; i < mp->count; i++)
     {
         materialCount = mp->current -> materialAmount;
@@ -88,6 +98,7 @@ void map::findBestCustomer(map *mp)
         
         temp = materialCost/materialCount;
         
+        //compare for maximum profit
         if(temp > bestCust)
         {
             bestCust = temp;
@@ -97,6 +108,7 @@ void map::findBestCustomer(map *mp)
         mp->current = mp->current -> next;
     }
     
+    //print out best customer
     cout << "The best customer for maximum profit is Company " << n->companyName << endl;
     cout << "at $" << setprecision(2) << fixed << temp << " per material" << endl;
     
