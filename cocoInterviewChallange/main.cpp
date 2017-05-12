@@ -2,17 +2,14 @@
 //  main.cpp
 //  cocoInterviewChallange
 //
-//  Created by Sione on 5/5/17.
 //  Copyright © 2017 FangaiuihaCode. All rights reserved.
 //
 
 #include <iostream>
-#include "map.h"
 #include <fstream>
-#include <string>
-#include <stdlib.h>
 #include <stdio.h>
-//#include "dataTable.txt"
+
+#include "map.h"
 
 using namespace std;
 

@@ -2,7 +2,6 @@
 //  map.h
 //  cocoInterviewChallange
 //
-//  Created by Sione on 5/5/17.
 //  Copyright © 2017 FangaiuihaCode. All rights reserved.
 //
 
